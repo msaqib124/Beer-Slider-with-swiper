@@ -34,9 +34,24 @@
       .beer-handle{
         margin-left: -2px;
       }
+      .color-tab {
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        background-color: #ccc;
+      }
     </style>
   </head>
   <body>
+
+    <!-- Color Tabs -->
+    <div class="color-tabs">
+        <div class="color-tab" data-color="red">Red</div>
+        <div class="color-tab" data-color="green">Green</div>
+        <div class="color-tab" data-color="blue">Blue</div>
+      </div>
 
     <!-- Slider main container -->
         <div class="swiper">
@@ -46,6 +61,7 @@
             <div class="swiper-slide">
                 <div class="beer-slider" data-beer-label="after">
                     <img
+                    id="after-image"
                         src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_CornerBakery_After.jpg"
                         alt=""
                     />
@@ -60,6 +76,7 @@
             <div class="swiper-slide">
                 <div class="beer-slider" data-beer-label="after">
                     <img
+                    id="after-image"
                         src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_AllServicePlumbing_After.jpg"
                         alt=""
                     />
@@ -74,6 +91,7 @@
             <div class="swiper-slide">
                 <div class="beer-slider" data-beer-label="after">
                     <img
+                    id="after-image"
                         src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_BunchesOfMunchies_After.jpg"
                         alt=""
                     />
@@ -130,6 +148,28 @@
             el: '.swiper-scrollbar',
         },
         });
+
+
+        // Handle color tab clicks
+      $('.color-tab').click(function() {
+        const color = $(this).data('color');
+        const afterImage = $('#after-image');
+        // Change after image source based on selected color
+        switch (color) {
+          case 'red':
+            afterImage.attr('src', 'red_after_image.jpg');
+            break;
+          case 'green':
+            afterImage.attr('src', 'https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_EasyGreenLandscaping_After.jpg');
+            break;
+          case 'blue':
+            afterImage.attr('src', 'blue_after_image.jpg');
+            break;
+          // Add more cases for other colors as needed
+          default:
+            break;
+        }
+      });
     </script>
   </body>
 </html>
