@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/beerslider@1.0.3/dist/BeerSlider.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+    <style>
+      .beer-reveal:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5px;
+        height: 100%;
+        background: #fff;
+        z-index: 2;
+      }
+      .beer-reveal[data-beer-label]:after,
+      .beer-slider[data-beer-label]:after {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 35px;
+        text-transform: uppercase;
+        border-radius: 5px;
+      }
+      .beer-handle{
+        margin-left: -2px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="beer-slider" data-beer-label="after">
+                    <img
+                        src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_CornerBakery_After.jpg"
+                        alt=""
+                    />
+                    <div class="beer-reveal" data-beer-label="before">
+                        <img
+                        src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_CornerBakery_Before.jpg"
+                        alt=""
+                        />
+                    </div>
+                    </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="beer-slider" data-beer-label="after">
+                    <img
+                        src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_AllServicePlumbing_After.jpg"
+                        alt=""
+                    />
+                    <div class="beer-reveal" data-beer-label="before">
+                        <img
+                        src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_AllServicePlumbing_Before.jpg"
+                        alt=""
+                        />
+                    </div>
+                    </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="beer-slider" data-beer-label="after">
+                    <img
+                        src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_BunchesOfMunchies_After.jpg"
+                        alt=""
+                    />
+                    <div class="beer-reveal" data-beer-label="before">
+                        <img
+                        src="https://www.360wraps.com/wp-content/uploads/2020/09/360_BeforeAfterGallery_Desktop_California_BunchesOfMunchies_Before.jpg"
+                        alt=""
+                        />
+                    </div>
+                    </div>
+            </div>
+            ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/beerslider@1.0.3/dist/BeerSlider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+      $.fn.BeerSlider = function ( options ) {
+            options = options || {};
+            return this.each(function() {
+            new BeerSlider(this, options);
+            });
+        };
+        $('.beer-slider').BeerSlider();
+
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        });
+    </script>
+  </body>
+</html>
